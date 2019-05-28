@@ -9,7 +9,7 @@ public class BinarySearchAlgo {
            int midpoint = (endPoint - starpoint)/2 + starpoint;
            if(arr[midpoint] == a ) return  true;
            if(arr[midpoint] > a) {
-               endPoint = midpoint;
+               endPoint = midpoint-1;
            }else {
                starpoint = midpoint +1;
            }
