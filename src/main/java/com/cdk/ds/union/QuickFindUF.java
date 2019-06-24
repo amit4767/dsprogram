@@ -23,7 +23,13 @@ public class QuickFindUF {
 
     //
      public  void Union(int p , int q){
+        int pvalue = id[p];
+        int qvalue = id[q];
 
+          for (int i = 0 ; i < id.length ; i++){
+              if(id[i] == pvalue)
+                  id[i] = qvalue;
+          }
      }
 
     public static void main(String[] args) {
