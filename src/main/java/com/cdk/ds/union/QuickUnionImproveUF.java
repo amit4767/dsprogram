@@ -1,14 +1,16 @@
 package com.cdk.ds.union;
 
-public class QuickUnionUF {
+public class QuickUnionImproveUF {
 
     private  int[] id;
+    private  int[] size;
 
   // Set id of each object to it self.
-    public  QuickUnionUF(int n){
+    public QuickUnionImproveUF(int n){
         id = new int[n];
         for(int i =0; i < n ; i++){
             id[i] = i;
+            size[i] =0;
         }
     }
 
