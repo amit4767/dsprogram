@@ -2,6 +2,24 @@ package com.cdk.ds.union;
 
 public class BinarySearchCounter {
 
+
+    static int recursiveRotation(int arr[], int low ,int high){
+
+        if(high < low) return  -1;
+        if(arr[low] <= arr[high])
+             return  low;
+        int mid = low + (high - low)/2;
+        int next =  (mid +1)% arr.length;
+        int previous  = (mid + arr.length -1) % arr.length;
+
+        if(arr[mid] <= arr[next]  && arr[mid] <= arr[previous])
+             return  mid;
+         if(arr[mid] <= arr[high])
+                  return  recursiveRotation(arr,low,mid -1);
+
+          else return recursiveRotation(arr,mid +1,high);
+    }
+
     static int countRotations(int arr[])
     {
         int low  = 0;
@@ -44,6 +62,7 @@ public class BinarySearchCounter {
         int arr[] = {15, 18, 2, 3, 6, 12};
         int n = arr.length;
 
-        System.out.println(countRotations(y));
+        System.out.println(countRotations(arr));
+        System.out.println(recursiveRotation(arr,0,arr.length -1));
     }
 }
