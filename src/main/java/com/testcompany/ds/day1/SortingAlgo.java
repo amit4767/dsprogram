@@ -1,4 +1,4 @@
-package com.cdk.ds.day1;
+package com.testcompany.ds.day1;
 
 public class SortingAlgo {
 

@@ -1,4 +1,4 @@
-package com.cdk.ds.union;
+package com.testcompany.ds.union;
 
 public class FibonacciClass {
 
