@@ -11,12 +11,21 @@ public class SortingAlgo {
 //            System.out.println(" array out ="+i);
 //        }
 
-        InsertSort insertSort = new InsertSort();
+//        InsertSort insertSort = new InsertSort();
+//
+//        int [] output = insertSort.sortArray(input);
+//        for ( int i : output){
+//            System.out.println(" array out ="+i);
+//        }
 
-        int [] output = insertSort.sortArray(input);
+
+        SelectionSort selectionSort = new SelectionSort();
+
+        int [] output = selectionSort.sort(input);
         for ( int i : output){
             System.out.println(" array out ="+i);
         }
+
 
     }
 }
