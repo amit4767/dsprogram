@@ -1,6 +1,6 @@
 package com.testcompany.ds.day1;
 
-public class SelectionSort {
+public class AllSorting {
     public  int [] sort(int [] arr){
         int len = arr.length;
 

@@ -19,7 +19,7 @@ public class SortingAlgo {
 //        }
 
 
-        SelectionSort selectionSort = new SelectionSort();
+        AllSorting selectionSort = new AllSorting();
 
         int [] output = selectionSort.sort(input);
         for ( int i : output){
