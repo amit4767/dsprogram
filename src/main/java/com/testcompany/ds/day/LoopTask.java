@@ -10,7 +10,8 @@ public class LoopTask  implements  Runnable {
     @Override
     public  void  run(){
 
-        System.out.println("Started the child thread for task Id ="+localcount);
+        //Thread.currentThread().getName()
+        System.out.println("Started the child thread for task Id ="+localcount+" name "+Thread.currentThread().getName());
         for(int i  = 0 ; i < 10 ; i ++){
 
             System.out.println("this is loop for ="+localcount +" is  ="+i);
