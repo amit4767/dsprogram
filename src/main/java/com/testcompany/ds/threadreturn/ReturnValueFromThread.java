@@ -21,9 +21,14 @@ public class ReturnValueFromThread {
         t2.start();
         t3.start();
 
-        System.out.println(" Result 1  ="+tas1.getSum());
-        System.out.println(" Result 2  ="+tas2.getSum());
-        System.out.println(" Result 3  ="+tas3.getSum());
+        try {
+            System.out.println(" Result 1  ="+tas1.getSum());
+            System.out.println(" Result 2  ="+tas2.getSum());
+            System.out.println(" Result 3  ="+tas3.getSum());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
         System.out.println(" [ "+mainthread +" ]  main thread end here");
     }
