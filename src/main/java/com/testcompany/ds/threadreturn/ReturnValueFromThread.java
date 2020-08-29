@@ -7,13 +7,13 @@ public class ReturnValueFromThread {
 
         System.out.println(" [ "+mainthread +" ]  main thread start here");
 
-       ValueReturnTask tas1 = new ValueReturnTask(2 ,3,3000);
+       ValueReturnTask tas1 = new ValueReturnTask(2 ,3,2000);
 
        Thread t1  = new Thread(tas1 , "Thread -1");
-        ValueReturnTask tas2 = new ValueReturnTask(3 ,4,3000);
+        ValueReturnTask tas2 = new ValueReturnTask(3 ,4,1000);
 
         Thread t2  = new Thread(tas2 , "Thread -2");
-        ValueReturnTask tas3 = new ValueReturnTask(5 ,6,3000);
+        ValueReturnTask tas3 = new ValueReturnTask(4 ,5,500);
 
         Thread t3  = new Thread(tas3 , "Thread -3");
 
