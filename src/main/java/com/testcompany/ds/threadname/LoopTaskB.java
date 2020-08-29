@@ -13,7 +13,7 @@ public class LoopTaskB implements  Runnable {
     @Override
     public  void  run(){
 
-        Thread.currentThread().setName(" Worker - "+ instanceNumber);
+       // Thread.currentThread().setName(" Worker - "+ instanceNumber);
         String currentThreadName =  Thread.currentThread().getName();
         System.out.println("Start of Thread [ "+currentThreadName+" ] having task id ="+ instanceNumber);
 
