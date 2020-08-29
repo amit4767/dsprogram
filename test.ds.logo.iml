@@ -21,6 +21,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: org.jetbrains:annotations-java5:19.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations-java5:20.0.0" level="project" />
   </component>
 </module>
