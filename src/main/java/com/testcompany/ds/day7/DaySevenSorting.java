@@ -18,11 +18,9 @@ public class DaySevenSorting {
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                    System.out.println("inside loop with condition [i][j] = ["+i+"]["+j+"] ="+ Arrays.toString(arr));
                 }
             }
 
-            System.out.println(" final outer loop [i] = ["+ i +"] = "+ Arrays.toString(arr));
         }
 
         System.out.println(" total count  = "+couter);
@@ -38,7 +36,33 @@ public class DaySevenSorting {
 
     public int [] insertSort(int[] arr){
 
-        return  null;
+        for(int i = 0 ; i < arr.length ; i++){
+             int pivot = arr[i];
+            System.out.println("before loop with condition [i][j] = ["+i+"] ="+ Arrays.toString(arr));
+              for(int j = i ; j>0  ; j--){
+
+                  System.out.println("before loop with condition [i][j] = ["+i+"]["+j+"] ="+ Arrays.toString(arr));
+                if( pivot >  arr[j]){
+                     int temp = arr[i];
+                    // min = temp;
+                    arr[i] = pivot;
+                    arr[j+1]  = temp;
+
+
+                    System.out.println("inside loop with condition [i][j] = ["+i+"]["+j+"] ="+ Arrays.toString(arr));
+                    break;
+                }
+                  arr[j] = arr[j-1];
+
+
+                  System.out.println("inside loop without condition [i][j] = ["+i+"]["+j+"] ="+ Arrays.toString(arr));
+            }
+
+            System.out.println("outside loop  = ["+i+"] ="+ Arrays.toString(arr));
+
+
+        }
+        return  arr;
 
     }
 }
