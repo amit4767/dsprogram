@@ -37,29 +37,12 @@ public class DaySevenSorting {
     public int [] insertSort(int[] arr){
 
         for(int i = 0 ; i < arr.length ; i++){
-             int pivot = arr[i];
-            System.out.println("before loop with condition [i][j] = ["+i+"] ="+ Arrays.toString(arr));
-              for(int j = i ; j>0  ; j--){
-
-                  System.out.println("before loop with condition [i][j] = ["+i+"]["+j+"] ="+ Arrays.toString(arr));
-                if( pivot >  arr[j]){
-                     int temp = arr[i];
-                    // min = temp;
-                    arr[i] = pivot;
-                    arr[j+1]  = temp;
-
-
-                    System.out.println("inside loop with condition [i][j] = ["+i+"]["+j+"] ="+ Arrays.toString(arr));
-                    break;
-                }
-                  arr[j] = arr[j-1];
-
-
-                  System.out.println("inside loop without condition [i][j] = ["+i+"]["+j+"] ="+ Arrays.toString(arr));
+            int temp  = arr[i];
+            int j = i-1;
+              for( ; j>= 0  && arr[j]> temp; j--) {
+                arr[j+1] = arr[j];
             }
-
-            System.out.println("outside loop  = ["+i+"] ="+ Arrays.toString(arr));
-
+              arr[j+1] = temp;
 
         }
         return  arr;
