@@ -14,5 +14,11 @@ public class MainClassEight {
         int [] arr1 = new int []{ 5 , 3 ,5 ,3 ,20 ,32 ,04 ,4334};
         System.out.println("Bubble Sorting = "+ Arrays.toString(sortClassEight.insertionSort(arr1)));
 
+        int [] arr2 = new int []{ 5 , 3 ,5 ,3 ,20 ,32 ,04 ,4334};
+        System.out.println("Bubble Sorting = "+ Arrays.toString(sortClassEight.selectionSort(arr2)));
+
+        int [] arr3 = new int []{ 5 , 3 ,5 ,3 ,20 ,32 ,04 ,4334};
+        System.out.println("Bubble Sorting = "+ Arrays.toString(sortClassEight.selectionSortTwo(arr3)));
+
     }
 }
