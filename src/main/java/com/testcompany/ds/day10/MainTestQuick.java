@@ -11,6 +11,13 @@ public class MainTestQuick {
         QuikSort quikSort = new QuikSort();
         System.out.println(" quick sort output = "+ Arrays.toString (quikSort.quickSort(arr,0 ,arr.length -1)));
 
+
+
+        int [] arr2 = new int [] {3 ,4 ,33,3323 ,32 ,2 ,2 ,3 ,4};
+
+        HeapSort heapSort = new HeapSort();
+        System.out.println(" quick sort output = "+ Arrays.toString (heapSort.heapsort(arr2)));
+
     }
 
 
