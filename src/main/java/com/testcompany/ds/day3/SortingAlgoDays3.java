@@ -28,7 +28,8 @@ public class SortingAlgoDays3 {
             System.out.println(" insert array out ="+i);
         }
 
-        int [] output3 = allSorting.selectionSort(input);
+        int [] input2 = new int[]{16,15,6,8,5,1,9};
+        int [] output3 = allSorting.selectionSort(input2);
         System.out.println("  Selection ");
         for ( int i : output3){
 
