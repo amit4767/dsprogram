@@ -146,5 +146,94 @@ public class AllSorting {
          return  end;
     }
 
+     public  int [] heapSort(int [] arr){
 
+         int len = arr.length;
+        //find big number
+        for(int i = len/2 - 1; i>=0  ; i --){
+            hipfiy(arr,len,i);
+        }
+
+        //Delete
+         for(int n = arr.length -1 ;  n > 0 ; n--){
+
+               int temp = arr[n];
+               arr[n]  = arr[0];
+               arr[0] = temp;
+
+             hipfiy(arr,n,0);
+         }
+        return  arr;
+     }
+
+    void heapify(int arr[], int n, int i)
+    {
+        int largest = i; // Initialize largest as root
+        int l = 2*i + 1; // left = 2*i + 1
+        int r = 2*i + 2; // right = 2*i + 2
+
+        // If left child is larger than root
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
+
+        // If right child is larger than largest so far
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
+
+        // If largest is not root
+        if (largest != i)
+        {
+            int swap = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = swap;
+
+            // Recursively heapify the affected sub-tree
+            heapify(arr, n, largest);
+        }
+    }
+
+    private  void hipfiy(int [] arr ,int n , int i ){
+
+         int largest = i;
+        int l = i *2 +1 ;
+          int r = i*2 +2;
+
+        // If left child is larger than root
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
+
+        // If right child is larger than largest so far
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
+
+//        if(  l < n && l > arr[largest]){
+//            largest = l;
+//        }
+//          if(r < n && r > arr[largest]){
+//
+//              largest = r;
+//          }
+
+          //
+         // If largest is not root
+                if (largest != i)
+                {
+                    int swap = arr[i];
+                    arr[i] = arr[largest];
+                    arr[largest] = swap;
+
+                    // Recursively heapify the affected sub-tree
+                    hipfiy(arr, n, largest);
+                }
+
+//          if(largest != i ){
+//
+//              int temp = arr[largest];
+//              arr[largest] = arr[i];
+//              arr[i] = temp;
+//
+//              hipfiy(arr,n ,largest);
+//          }
+
+     }
 }

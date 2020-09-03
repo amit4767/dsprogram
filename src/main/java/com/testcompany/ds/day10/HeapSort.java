@@ -16,7 +16,7 @@ public class HeapSort {
             // delete max heap element
 
         System.out.println(" heapsort before delete "+ Arrays.toString (arr));
-           for(int n= arr.length -1  ; n >= 1 ; n --){
+           for(int n= arr.length -1  ; n >0 ; n --){
 
                 int temp = arr[n];
                 arr[n] = arr[0];
@@ -38,9 +38,10 @@ public class HeapSort {
            if ( leftchild < starleng && arr[leftchild] >arr[currentMaxValue] ){
                currentMaxValue = leftchild;
            }
-        if( righchild < starleng && arr[righchild] >arr[currentMaxValue] ){
+         if( righchild < starleng && arr[righchild] >arr[currentMaxValue] ){
             currentMaxValue = righchild;
           }
+
           if(assumerlage != currentMaxValue){
 
              int temp = arr[assumerlage];

@@ -45,6 +45,10 @@ public class TestingAllSorting {
 
         System.out.println("quick Sort     ="+ Arrays.toString(new AllSortingTwo().QuickSort(arr5,0,arr4.length -1)));
 
+        int [] arr6 = new int[]{7,6,10,5,9 ,2 ,1 ,15 ,7};
+
+        System.out.println("heap Sort     ="+ Arrays.toString(new AllSorting().heapSort(arr6)));
+
 
     }
 }

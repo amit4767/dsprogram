@@ -135,7 +135,6 @@ public class AllSortingTwo {
     }
 
    private int quick(int [] arr , int low , int high){
-
         int  start = low;
         int  pivot = arr[low];
         int  end = high;
