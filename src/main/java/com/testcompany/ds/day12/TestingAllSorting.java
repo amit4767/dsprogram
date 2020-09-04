@@ -47,7 +47,11 @@ public class TestingAllSorting {
 
         int [] arr6 = new int[]{7,6,10,5,9 ,2 ,1 ,15 ,7};
 
-        System.out.println("heap Sort     ="+ Arrays.toString(new AllSorting().heapSort(arr6)));
+        System.out.println("heap Sort      ="+ Arrays.toString(new AllSorting().heapSort(arr6)));
+
+        int [] arr66 = new int[]{7,6,10,5,9 ,2 ,1 ,15 ,7};
+
+        System.out.println("heap Sort      ="+ Arrays.toString(new AllSortingTwo().HeapSort(arr66)));
 
 
     }

@@ -123,22 +123,18 @@ public class AllSortingTwo {
     }
 
     public  int [] QuickSort(int [] arr , int low , int high){
-
-
         if( low  < high){
             int loc =  quick( arr ,  low ,  high);
             QuickSort(arr ,low , loc -1);
             QuickSort(arr ,loc +1 , high);
-
         }
         return  arr;
     }
 
-   private int quick(int [] arr , int low , int high){
+    private int quick(int [] arr , int low , int high){
         int  start = low;
         int  pivot = arr[low];
         int  end = high;
-
         while(start < end){
               while(arr[start] <= pivot ){
                   start ++;
@@ -160,6 +156,56 @@ public class AllSortingTwo {
         arr[low] = temp;
 
         return end;
+    }
+
+    public  int [] HeapSort(int [] arr){
+
+         int len = arr.length;
+
+         //sorting
+         for(int i = len/2 -1 ; i >=0 ; i --){
+             heapfiy(arr, len, i);
+         }
+
+         // deleteing
+        for(int n = len -1 ; n > 0 ; n--){
+
+               int swap = arr[n];
+               arr[n] = arr[0];
+               arr[0] = swap;
+
+            heapfiy(arr, n, 0);
+
+
+        }
+
+
+          return arr;
+    }
+
+    private  void heapfiy(int [] arr, int currlength, int  currentroot){
+
+         int currentmax = currentroot;
+         int left = currentroot*2 +1;
+         int righ = currentroot*2 +2;
+
+         if(left < currlength && arr[left] > arr[currentmax]){
+
+              currentmax = left;
+         }
+
+         if(righ < currlength && arr[righ] > arr[currentmax]){
+             currentmax = righ;
+         }
+         if(currentmax != currentroot){
+             int temp =  arr[currentmax];
+             arr[currentmax] = arr[currentroot];
+             arr[currentroot] = temp;
+             heapfiy(arr,currlength ,currentmax);
+
+         }
+
+
     }
 
 }
