@@ -6,7 +6,6 @@ public class ThreeSort {
     public int [] quickSort(int []arr , int low , int high){
 
         if(low < high){
-
             int loc = quick(arr,low ,high);
             quickSort(arr ,low , loc -1);
             quickSort(arr ,loc+1, high);
@@ -15,16 +14,46 @@ public class ThreeSort {
 
         return  arr;
     }
+
+    private  int quick1(int [] arr , int low , int high){
+
+        int start = low +1;
+        int end  = high;
+        int pivot = arr[low];
+
+        while (start <end){
+            while( arr[start] <= pivot){
+                start ++;
+            }
+
+            while( arr[end] > pivot){
+                end --;
+            }
+            if(start < end){
+
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+            }
+        }
+
+        int temp = arr[low];
+        arr[low]  = arr[end];
+        arr[end] =  temp;
+
+
+        return  end;
+    }
     private int quick(int [] arr , int low , int high){
 
          int pivot = arr[low];
-         int start = low;
+         int start = low +1;
          int end = high;
          while( start < end){
-             if(arr[start] <= pivot){
+             while (arr[start] <= pivot){
                  start ++;
              }
-             if(arr[high] > pivot){
+             while (arr[end] > pivot){
                  end --;
              }
              if(start < end){
@@ -91,32 +120,58 @@ public class ThreeSort {
              int temp = arr[0];
              arr[0]  = arr[n];
              arr[n] =temp;
-             heapipy(arr , n , 0);
+            heapipy(arr , n , 0);
         }
         return  arr;
     }
 
-    private  void heapipy(int []arr , int len , int currenparentNode){
+    private  void heapfiy(int [] arr, int currlength, int  currentroot){
 
-        int currentMaxIdex = currenparentNode;
-        int leftchild =  currenparentNode*1 +1;
-        int rightchild = currenparentNode*2 +2;
+        int currentmax = currentroot;
+        int left = currentroot*2 +1;
+        int righ = currentroot*2 +2;
 
-        if(leftchild < len   && arr[leftchild] >arr[currentMaxIdex]){
-            currentMaxIdex = leftchild;
-        }
-        if(rightchild < len && arr[rightchild] > arr[currentMaxIdex]){
-            currentMaxIdex = rightchild;
-        }
-        if(currentMaxIdex !=currenparentNode ){
-              int temp = arr[currentMaxIdex];
-              arr[currentMaxIdex]= arr[currenparentNode];
-              arr[currenparentNode] = temp;
-              heapipy(arr,len,currentMaxIdex);
+        if(left < currlength && arr[left] > arr[currentmax]){
 
+            currentmax = left;
         }
 
+        if(righ < currlength && arr[righ] > arr[currentmax]){
+            currentmax = righ;
+        }
+        if(currentmax != currentroot){
+            int temp =  arr[currentmax];
+            arr[currentmax] = arr[currentroot];
+            arr[currentroot] = temp;
+            heapfiy(arr,currlength ,currentmax);
 
+        }
+
+
+    }
+
+    private  void heapipy(int []arr , int currlength , int currentroot){
+
+        int currentmax = currentroot;
+        int left =  currentroot*2 +1;
+        int righ = currentroot*2 +2;
+
+
+        if(left < currlength && arr[left] > arr[currentmax]){
+
+            currentmax = left;
+        }
+
+        if(righ < currlength && arr[righ] > arr[currentmax]){
+            currentmax = righ;
+        }
+        if(currentmax != currentroot ){
+              int temp = arr[currentmax];
+              arr[currentmax]= arr[currentroot];
+              arr[currentroot] = temp;
+              heapipy(arr,currlength,currentmax);
+
+        }
 
     }
 
