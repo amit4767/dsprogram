@@ -4,11 +4,12 @@ public class TestSorting {
 
     public static void main(String[] args) {
 
-        FibNaci fibNaci  = new FibNaci(20);
+        FibNaci fibNaci  = new FibNaci(8);
 
         System.out.println("Fibnaci  - "+fibNaci.fib(8));
 
-        System.out.println("Fibnaci  - "+FibNaci.coutner);
+        System.out.println("fibNaci.fibBottomUpAppoarch   ="+fibNaci.fibBottomUpAppoarch(8));
+
 
     }
 }
