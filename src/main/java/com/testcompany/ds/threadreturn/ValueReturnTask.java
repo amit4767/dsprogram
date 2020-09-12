@@ -28,16 +28,13 @@ public class ValueReturnTask  implements  Runnable{
        String currentThreadName = Thread.currentThread().getName();
         System.out.println("###  ["+currentThreadName +" ] <" +taskId +"> STARTING ######");
 
-
         try {
             TimeUnit.MILLISECONDS.sleep(sleepTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         sum = a+b;
         done = true;
-
         synchronized (this){
             System.out.println("THREAD SUM Notification DONE");
             this.notify();
@@ -47,13 +44,10 @@ public class ValueReturnTask  implements  Runnable{
     }
 
      public int getSum() throws InterruptedException {
-
         synchronized (this){
-
             if( ! done){
                 System.out.println("THREAD IS WAITNG FOR SUM TO COMPLETE");
                 this.wait();
-
             }
         }
         return sum;
