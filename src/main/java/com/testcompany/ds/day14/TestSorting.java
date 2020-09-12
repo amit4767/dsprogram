@@ -10,6 +10,10 @@ public class TestSorting {
 
         System.out.println("fibNaci.fibBottomUpAppoarch   ="+fibNaci.fibBottomUpAppoarch(8));
 
+        int [] conis = new int[]{ 0,2,3,5,10};
+        CoinProblem coinProblem = new CoinProblem();
+        System.out.println("Diffrenet number of ways  = "+ coinProblem.totalCount(conis,15));
+
 
     }
 }
